@@ -92,12 +92,19 @@
             "aot": true,
             "assets": [
               "projects/demo/src/favicon.ico",
-              "projects/demo/src/assets"
+              "projects/demo/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./assets",
+                "output": "projects/test/src/assets"
+              }
             ],
             "styles": [
-              "projects/demo/src/styles.scss"
+              "theme/theme.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/hammerjs/hammer.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -195,12 +202,19 @@
             "aot": true,
             "assets": [
               "projects/test/src/favicon.ico",
-              "projects/test/src/assets"
+              "projects/test/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./assets",
+                "output": "projects/test/src/assets"
+              }
             ],
             "styles": [
-              "projects/test/src/styles.scss"
+              "theme/theme.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/hammerjs/hammer.js"
+            ]
           },
           "configurations": {
             "production": {

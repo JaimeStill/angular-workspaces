@@ -1,0 +1,132 @@
+<section class="elevated"
+         fxLayout="column"
+         fxLayoutAlign="start start"
+         [style.width.px]="width">
+  <section class="backdrop"
+           [style.background-image]="'url('+person?.pic+')'">
+    <section class="cover"
+             fxLayout="row"
+             fxLayoutAlign="start stretch"
+             backdrop
+             [filters]="bdFilters"
+             [hover]="bdHover">
+      <img [src]="person?.pic"
+           [style.max-width.%]="40"
+           [style.margin.px]="4">
+      <section class="title"
+               fxFlex
+               fxLayout="column"
+               fxLayoutAlign="start stretch"
+               [style.margin.px]="4">
+        <p class="mat-subheading-2">{{getTitle()}}</p>
+        <p>{{person.phone}}</p>
+        <p>{{person.email}}</p>
+        <p>{{person.branch}}</p>
+        <p>{{person.attachedOrg}} - {{person.attachedSection}}</p>
+      </section>
+    </section>
+  </section>
+  <mat-accordion [multi]="true">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>contact_phone</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Contact Information
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <section fxLayout="row"
+               fxLayoutAlign="space-between center">
+        <p><strong>First: </strong>{{person.first}}</p>
+        <p><strong>Middle: </strong>{{person.middle}}</p>
+        <p><strong>Last: </strong>{{person.last}}</p>
+      </section>
+      <section fxLayout="row"
+               fxLayoutAlign="space-between center">
+        <p><strong>Phone: </strong>{{person.phone}}</p>
+        <p>
+          <strong>Email: </strong>
+          <a class="link"
+             href="mailto:{{person.email}}"
+             target="_blank">{{person.email}}</a>
+        </p>
+      </section>
+      <address>
+        <span class="mat-body-strong">Address:</span><br />
+        {{person.address}}<br />
+        {{person.city}}, {{person.state}} {{person.zip}}
+      </address>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>local_pharmacy</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Physical Information
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <section fxLayout="row"
+               fxLayoutAlign="space-between center">
+        <p><strong>Height: </strong>{{person.height}}</p>
+        <p><strong>Weight: </strong>{{person.weight}}</p>
+      </section>
+      <section fxLayout="row"
+               fxLayoutAlign="space-between center">
+        <p><strong>Eye Color: </strong>{{person.eyeColor}}</p>
+        <p><strong>Hair Color: </strong>{{person.hairColor}}</p>
+      </section>
+      <section fxLayout="row"
+               fxLayoutAlign="space-between center">
+        <p><strong>Gender: </strong>{{person.gender}}</p>
+        <p><strong>Blood Type: </strong>{{person.bloodType}}</p>
+      </section>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>perm_identity</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Personally Identifiable Information
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p><strong>Birthplace: </strong>{{person.birthplace}}</p>
+      <section fxLayout="row" fxLayoutAlign="space-between center">
+        <p><strong>SSN: </strong>{{person.ssn}}</p>
+        <p><strong>DOB: </strong>{{person.dob}}</p>
+      </section>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>domain</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Organizational Information
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <section fxLayout="row" fxLayoutAlign="space-between center">
+        <p><strong>Org: </strong>{{person.org}}</p>
+        <p><strong>Attached Org: </strong>{{person.attachedOrg}}</p>
+      </section>
+      <section fxLayout="row" fxLayoutAlign="space-between center">
+        <p><strong>Section: </strong>{{person.section}}</p>
+        <p><strong>Attached Section: </strong>{{person.attachedSection}}</p>
+      </section>
+      <section fxLayout="row" fxLayoutAlign="space-between center">
+        <p><strong>Branch: </strong>{{person.branch}}</p>
+        <p><strong>Grade - Rank: </strong>{{person.grade}} - {{person.rank}}</p>
+      </section>
+      <section fxLayout="row" fxLayoutAlign="space-between center">
+        <p><strong>BASD: </strong>{{person.basd}}</p>
+        <p><strong>DOR: </strong>{{person.dor}}</p>
+      </section>
+      <section fxLayout="row" fxLayoutAlign="space-between center">
+        <p><strong>PCS: </strong>{{person.pcs}}</p>
+        <p><strong>ETS: </strong>{{person.ets}}</p>
+      </section>
+    </mat-expansion-panel>
+  </mat-accordion>
+</section>

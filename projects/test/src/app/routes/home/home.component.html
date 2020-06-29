@@ -1,0 +1,64 @@
+<mat-toolbar>
+  <span fxFlex>Home</span>
+  <button mat-icon-button
+          (click)="themer.toggleTheme()">
+    <mat-icon [color]="themer.isLight ? 'accent' : 'default'">
+      {{themer.isLight ? 'brightness_5' : 'brightness_3'}}
+    </mat-icon>
+  </button>
+</mat-toolbar>
+<h1 class="mat-title" [style.margin.px]="8">Welcome to {{title}}!</h1>
+<button mat-stroked-button
+        color="primary"
+        [style.margin.px]="8"
+        (click)="openDialog()">Test Confirm Dialog</button>
+<p [style.margin.px]="8">{{value | bytes}}</p>
+<section class="icon-example">
+  <button mat-icon-button>
+    <mat-icon color="primary">save</mat-icon>
+  </button>
+  Regular
+  <button mat-icon-button>
+    <mat-icon color="primary"
+              class="material-icons-outlined">save</mat-icon>
+  </button>
+  Outlined
+</section>
+<ng-template #loading>
+  <mat-progress-bar mode="indeterminate"
+                    color="accent"></mat-progress-bar>
+</ng-template>
+<ng-container *ngIf="peopleSvc.people$ | async as people else loading">
+  <section *ngIf="people.length > 0"
+           fxLayout="row | wrap"
+           fxLayoutAlign="start stretch"
+           [style.padding.px]="4">
+    <person-card *ngFor="let person of people"
+                 [person]="person"></person-card>
+  </section>
+</ng-container>
+<section class="container">
+  <section class="example background-card glowing-primary">
+    <code class="primary">glowing-primary</code>
+  </section>
+
+  <section class="example background-card glowing-accent">
+    <code class="accent">glowing-accent</code>
+  </section>
+
+  <section class="example background-card glowing-warn">
+    <code class="warn">glowing-warn</code>
+  </section>
+
+  <section class="example background-card glow-12-primary">
+    <code class="primary">glow-12-primary</code>
+  </section>
+
+  <section class="example background-card glow-12-accent">
+    <code class="accent">glow-12-accent</code>
+  </section>
+
+  <section class="example background-card glow-12-warn">
+    <code class="warn">glow-12-warn</code>
+  </section>
+</section>

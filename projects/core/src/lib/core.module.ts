@@ -1,12 +1,28 @@
 import { NgModule } from '@angular/core';
-import { CoreComponent } from './core.component';
 
+import { MaterialModule } from './material.module';
 
+import { Dialogs } from './dialogs';
+import { Directives } from './directives';
+import { Pipes } from './pipes';
 
 @NgModule({
-  declarations: [CoreComponent],
-  imports: [
+  declarations: [
+    ...Dialogs,
+    ...Directives,
+    ...Pipes
   ],
-  exports: [CoreComponent]
+  entryComponents: [
+    ...Dialogs
+  ],
+  imports: [
+    MaterialModule
+  ],
+  exports: [
+    MaterialModule,
+    ...Dialogs,
+    ...Directives,
+    ...Pipes
+  ]
 })
 export class CoreModule { }

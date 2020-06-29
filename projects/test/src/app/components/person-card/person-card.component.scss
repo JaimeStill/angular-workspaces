@@ -1,0 +1,23 @@
+.elevated {
+  margin: 4px;
+}
+
+.backdrop {
+  background-color: rgba(0,0,0,.87);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: right;
+}
+
+.title {
+  color: rgba(0,0,0,.9);
+}
+
+.cover {
+  margin: 4px;
+}
+
+mat-accordion {
+  width: 100%;
+}
