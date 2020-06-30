@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { Components } from './components';
 import { Services } from './services';
 
+import { environment } from '../environments/environment';
+
 import {
   Routes,
   RouteComponents
@@ -26,7 +28,7 @@ import {
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    CoreModule,
+    CoreModule.forRoot({ server: environment.server, api: environment.api }),
     RouterModule.forRoot(Routes)
   ],
   providers: [
