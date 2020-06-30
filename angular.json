@@ -4,40 +4,40 @@
   "cli": {
     "packageManager": "yarn"
   },
-  "newProjectRoot": "projects",
+  "newProjectRoot": "client",
   "projects": {
     "core": {
       "projectType": "library",
-      "root": "projects/core",
-      "sourceRoot": "projects/core/src",
+      "root": "client/core",
+      "sourceRoot": "client/core/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/core/tsconfig.lib.json",
-            "project": "projects/core/ng-package.json"
+            "tsConfig": "client/core/tsconfig.lib.json",
+            "project": "client/core/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/core/tsconfig.lib.prod.json"
+              "tsConfig": "client/core/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/core/src/test.ts",
-            "tsConfig": "projects/core/tsconfig.spec.json",
-            "karmaConfig": "projects/core/karma.conf.js"
+            "main": "client/core/src/test.ts",
+            "tsConfig": "client/core/tsconfig.spec.json",
+            "karmaConfig": "client/core/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/core/tsconfig.lib.json",
-              "projects/core/tsconfig.spec.json"
+              "client/core/tsconfig.lib.json",
+              "client/core/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -77,26 +77,26 @@
           "skipTests": true
         }
       },
-      "root": "projects/demo",
-      "sourceRoot": "projects/demo/src",
+      "root": "client/demo",
+      "sourceRoot": "client/demo/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/demo",
-            "index": "projects/demo/src/index.html",
-            "main": "projects/demo/src/main.ts",
-            "polyfills": "projects/demo/src/polyfills.ts",
-            "tsConfig": "projects/demo/tsconfig.app.json",
+            "index": "client/demo/src/index.html",
+            "main": "client/demo/src/main.ts",
+            "polyfills": "client/demo/src/polyfills.ts",
+            "tsConfig": "client/demo/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/demo/src/favicon.ico",
-              "projects/demo/src/assets",
+              "client/demo/src/favicon.ico",
+              "client/demo/src/assets",
               {
                 "glob": "**/*",
                 "input": "./assets",
-                "output": "projects/test/src/assets"
+                "output": "client/test/src/assets"
               }
             ],
             "styles": [
@@ -110,8 +110,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/demo/src/environments/environment.ts",
-                  "with": "projects/demo/src/environments/environment.prod.ts"
+                  "replace": "client/demo/src/environments/environment.ts",
+                  "with": "client/demo/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -187,26 +187,26 @@
           "skipTests": true
         }
       },
-      "root": "projects/test",
-      "sourceRoot": "projects/test/src",
+      "root": "client/test",
+      "sourceRoot": "client/test/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/test",
-            "index": "projects/test/src/index.html",
-            "main": "projects/test/src/main.ts",
-            "polyfills": "projects/test/src/polyfills.ts",
-            "tsConfig": "projects/test/tsconfig.app.json",
+            "index": "client/test/src/index.html",
+            "main": "client/test/src/main.ts",
+            "polyfills": "client/test/src/polyfills.ts",
+            "tsConfig": "client/test/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/test/src/favicon.ico",
-              "projects/test/src/assets",
+              "client/test/src/favicon.ico",
+              "client/test/src/assets",
               {
                 "glob": "**/*",
                 "input": "./assets",
-                "output": "projects/test/src/assets"
+                "output": "client/test/src/assets"
               }
             ],
             "styles": [
@@ -220,8 +220,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/test/src/environments/environment.ts",
-                  "with": "projects/test/src/environments/environment.prod.ts"
+                  "replace": "client/test/src/environments/environment.ts",
+                  "with": "client/test/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,

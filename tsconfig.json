@@ -13,13 +13,13 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/core/tsconfig.lib.json"
+      "path": "./client/core/tsconfig.lib.json"
     },
     {
-      "path": "./projects/demo/tsconfig.app.json"
+      "path": "./client/demo/tsconfig.app.json"
     },
     {
-      "path": "./projects/test/tsconfig.app.json"
+      "path": "./client/test/tsconfig.app.json"
     }
 ]
 }
