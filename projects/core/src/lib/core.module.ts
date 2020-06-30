@@ -1,10 +1,17 @@
-import { NgModule } from '@angular/core';
+import {
+  ModuleWithProviders,
+  NgModule
+} from '@angular/core';
+
+import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from './material.module';
 
 import { Dialogs } from './dialogs';
 import { Directives } from './directives';
 import { Pipes } from './pipes';
+
+import { ServerConfig } from './config';
 
 @NgModule({
   declarations: [
@@ -16,6 +23,7 @@ import { Pipes } from './pipes';
     ...Dialogs
   ],
   imports: [
+    CommonModule,
     MaterialModule
   ],
   exports: [
@@ -25,4 +33,13 @@ import { Pipes } from './pipes';
     ...Pipes
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+  static forRoot(config: ServerConfig): ModuleWithProviders<CoreModule> {
+    return {
+      ngModule: CoreModule,
+      providers: [
+        { provide: ServerConfig, useValue: config }
+      ]
+    };
+  }
+}

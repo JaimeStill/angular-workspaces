@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { ThemeService } from 'core';
+
+import {
+  SyncSocketService,
+  ThemeService
+} from 'core';
 
 @Component({
   selector: 'home-route',
@@ -7,6 +11,7 @@ import { ThemeService } from 'core';
 })
 export class HomeComponent {
   constructor(
+    public sync: SyncSocketService,
     public themer: ThemeService
   ) { }
 }

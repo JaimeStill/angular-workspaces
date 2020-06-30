@@ -8,6 +8,8 @@ import { CoreModule } from 'core';
 
 import { AppComponent } from './app.component';
 
+import { environment } from '../environments/environment';
+
 import {
   Routes,
   RouteComponents
@@ -22,7 +24,7 @@ import {
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    CoreModule,
+    CoreModule.forRoot({ server: environment.server, api: environment.api }),
     RouterModule.forRoot(Routes)
   ],
   providers: [],
