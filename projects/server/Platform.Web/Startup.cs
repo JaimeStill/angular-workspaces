@@ -1,3 +1,5 @@
+using System.Linq;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -80,13 +82,10 @@ namespace Platform.Web
 
             app.UseCors(policy =>
             {
-                policy.WithOrigins(
-                    "http://localhost:4200",
-                    "http://localhost:3000"
-                )
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
+                policy.WithOrigins(GetConfigArray("CorsOrigins"))
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
             });
 
             app.UseEndpoints(endpoints =>
@@ -95,5 +94,10 @@ namespace Platform.Web
                 endpoints.MapHub<SyncHub>("/sync");
             });
         }
+
+        string[] GetConfigArray(string section) => Configuration.GetSection(section)
+            .GetChildren()
+            .Select(x => x.Value)
+            .ToArray();
     }
 }

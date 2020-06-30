@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently --raw --kill-others \"yarn start:test\" \"yarn start:demo\"",
+    "start:server": "dotnet run --project ./projects/server/Platform.Web",
     "start:test": "ng serve test",
     "start:demo": "ng serve demo",
     "build": "ng build",
