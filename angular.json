@@ -24,20 +24,11 @@
             }
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "client/core/src/test.ts",
-            "tsConfig": "client/core/tsconfig.spec.json",
-            "karmaConfig": "client/core/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "client/core/tsconfig.lib.json",
-              "client/core/tsconfig.spec.json"
+              "client/core/tsconfig.lib.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -266,6 +257,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "core"
 }
